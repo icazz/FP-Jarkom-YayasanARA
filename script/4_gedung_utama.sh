@@ -3,8 +3,20 @@
 # R-GedungUtama
 en
 conf ter
-interface interface Serial0/1/0
+interface Serial0/1/0
 ip address 10.10.10.1 255.255.255.252
+clock rate 128000
+no shu
+
+interface Serial0/1/1
+ip address 10.10.30.1 255.255.255.252
+clock rate 128000
+no shut
+exit
+
+interface Serial0/2/0
+ip address 10.10.20.1 255.255.255.252
+clock rate 128000
 no shut
 exit
 

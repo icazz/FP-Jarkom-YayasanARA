@@ -4,7 +4,7 @@
 en
 conf ter
 interface Serial0/2/0
-ip address 10.10.30.1 255.255.255.252
+ip address 10.10.30.2 255.255.255.252
 no shut
 exit
 
