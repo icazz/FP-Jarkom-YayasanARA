@@ -1,146 +1,162 @@
 #! /bin/bash
 
 # R-GedungUtama
-en
-conf ter
+enable
+configure terminal
 router ospf 1 
-network 10.10.10.0 0.0.0.3 area 0
-network 10.10.30.0 0.0.0.3 area 0
-network 10.10.20.0 0.0.0.3 area 0
-network 10.1.99.0 0.0.0.255 area 1 
+ router-id 1.1.1.1 
+network 10.0.4.68 0.0.0.3 area 0
+network 10.0.4.72 0.0.0.3 area 0
+network 10.0.4.64 0.0.0.3 area 0
+network 10.0.4.40 0.0.0.3 area 1
+network 10.0.4.44 0.0.0.3 area 1
+network 10.0.4.48 0.0.0.3 area 1
+network 10.0.4.52 0.0.0.3 area 1
+network 10.0.4.56 0.0.0.3 area 1
+network 10.0.4.60 0.0.0.3 area 1
 end
-Router# copy running-config startup-config
+write memory
 
 # R-ARATech
-en
-conf ter
+enable
+configure terminal
 router ospf 2
-network 10.10.30.0 0.0.0.3 area 0
-network 10.2.99.0 0.0.0.255 area 2
+ router-id 2.2.2.2
+network 10.0.4.72 0.0.0.3 area 0
+network 10.0.1.0 0.0.0.3 area 2
+network 10.0.2.0 0.0.0.3 area 2
+network 10.0.6.0 0.0.0.3 area 2
+network 10.0.5.0 0.0.0.3 area 2
+network 10.0.8.64 0.0.0.3 area 2
 end
-Router# copy running-config startup-config
+write memory
 
 # R-Cabang
-en
-conf ter
+enable
+configure terminal
 router ospf 3
-network 10.10.20.0 0.0.0.3 area 0
-network 10.1.200.0 0.0.0.255 area 3
+ router-id 3.3.3.3
+network 10.0.4.64 0.0.0.3 area 0
+network 10.0.3.192 0.0.0.63 area 3
 end
-Router# copy running-config startup-config
+write memory
 
 # Router Internal
 
 # R-SDM
-en
-conf ter
+enable
+configure terminal
 router ospf 10
-network 10.1.99.0 0.0.0.255 area 1
-network 10.1.10.0 0.0.0.255 area 1 
+ router-id 10.10.10.1
+network 10.0.4.40 0.0.0.3 area 1
+network 10.0.3.0 0.0.0.127 area 1 
 end
-Router# copy running-config startup-config
+write memory
 
 # R-Kurikulum
-en
-conf ter
-hostname R-Kurikulum
+enable
+configure terminal
 router ospf 10
-network 10.1.99.0 0.0.0.255 area 1
-network 10.1.20.0 0.0.0.255 area 1 
+ router-id 10.10.10.2
+network 10.0.4.44 0.0.0.3 area 1
+network 10.0.2.0 0.0.0.255 area 1 
 end
-Router# copy running-config startup-config
+write memory
 
 # R-Sarpras
-en
-conf ter
-hostname R-Sarpras
+enable
+configure terminal
 router ospf 10
-network 10.1.99.0 0.0.0.255 area 1
-network 10.1.30.0 0.0.0.255 area 1 
+ router-id 10.10.10.3
+network 10.0.4.48 0.0.0.3 area 1
+network 10.0.3.128 0.0.0.63 area 1 
 end
-Router# copy running-config startup-config
+write memory
 
 # R-Pengawasan
-en
-conf ter
-hostname R-Pengawasan
+enable
+configure terminal
 router ospf 10
-network 10.1.99.0 0.0.0.255 area 1
-network 10.1.40.0 0.0.0.255 area 1 
+ router-id 10.10.10.4
+network 10.0.4.52 0.0.0.3 area 1
+network 10.0.4.0 0.0.0.31 area 1 
 end
-Router# copy running-config startup-config
+write memory
 
 # R-LayananOps
-en
-conf ter
-hostname R-LayananOps
+enable
+configure terminal
 router ospf 10
-network 10.1.99.0 0.0.0.255 area 1
-network 10.1.50.0 0.0.0.255 area 1 
+ router-id 10.10.10.5
+network 10.0.4.56 0.0.0.3 area 1
+network 10.0.0.0 0.0.1.255 area 1 
 end
-Router# copy running-config startup-config
+write memory
 
 # R-ServerIT
-en
-conf ter
-hostname R-ServerIT
+enable
+configure terminal
 router ospf 10
-network 10.1.99.0 0.0.0.255 area 1
-network 10.1.60.0 0.0.0.255 area 1 
+ router-id 10.10.10.6
+network 10.0.4.60 0.0.0.3 area 1
+network 10.0.4.32 0.0.0.7 area 1 
 end
-Router# copy running-config startup-config
+write memory
 
 # R-LT1
-en
-conf ter
+enable
+configure terminal
 router ospf 20
-network 10.2.99.0 0.0.0.255 area 2
-network 10.2.1.0 0.0.0.255 area 2
+ router-id 20.20.20.1
+network 10.0.1.0 0.0.0.3 area 2
+network 10.0.0.0 0.0.0.127 area 2
 end
-Router# copy running-config startup-config
+write memory
 
 # R-LT2
-en
-conf ter
-hostname R-LT2
+enable
+configure terminal
 router ospf 20
-network 10.2.99.0 0.0.0.255 area 2
-network 10.2.2.0 0.0.0.255 area 2
+ router-id 20.20.20.2
+network 10.0.2.0 0.0.0.3 area 2
+network 10.0.0.128 0.0.0.127 area 2
 end
-Router# copy running-config startup-config
+write memory
 
 # R-LT3
-en
-conf ter
-hostname R-LT3
+enable
+configure terminal
 router ospf 20
-network 10.2.99.0 0.0.0.255 area 2
-network 10.2.3.0 0.0.0.255 area 2
+ router-id 20.20.20.3
+network 10.0.6.0 0.0.0.3 area 2
+network 10.0.4.0 0.0.0.127 area 2
 end
-Router# copy running-config startup-config
+write memory
 
 # R-LT4
-en
-conf ter
-hostname R-LT4
+enable
+configure terminal
 router ospf 20
-network 10.2.99.0 0.0.0.255 area 2
-network 10.2.4.0 0.0.0.255 area 2
+ router-id 20.20.20.4
+network 10.0.5.0 0.0.0.3 area 2
+network 10.0.4.128 0.0.0.127 area 2
 end
-Router# copy running-config startup-config
+write memory
 
 # R-LT5
-en
-conf ter
-hostname R-LT5
+enable
+configure terminal
 router ospf 20
-network 10.2.99.0 0.0.0.255 area 2
-network 10.2.5.0 0.0.0.255 area 2
+ router-id 20.20.20.5
+network 10.0.8.64 0.0.0.3 area 2
+network 10.0.8.0 0.0.0.63 area 2
 end
-Router# copy running-config startup-config
+write memory
 
 # cek di router inti
+# R-GedungUtama
 show ip ospf neighbor
+# R-Cabang
 show ip route
 # test
 ping ip
